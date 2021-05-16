@@ -1,0 +1,68 @@
+body {
+    overflow-y: scroll;
+    width: 1000px;
+    margin: 8px auto;
+    padding-left: 1em;
+    border-left: 1px solid #ccc;
+    background-color: #d9feff;
+}
+
+main {
+    min-height: 40em;
+    padding-top: 2em;
+    padding-left: 2em;
+    background-color: #ecfeff;
+}
+
+nav {
+    /* background-color: green; */
+    font-size: 2em;
+}
+
+footer {
+    border-top: 1px solid #ccc;
+    min-height: 4em;
+    text-align: center;
+}
+
+.dice-utf8 .dice-1::after {
+    content: "\2680";
+}
+
+.dice-utf8 .dice-2::after {
+    content: "\2681";
+}
+
+.dice-utf8 .dice-3::after {
+    content: "\2682";
+}
+
+.dice-utf8 .dice-4::after {
+    content: "\2683";
+}
+
+.dice-utf8 .dice-5::after {
+    content: "\2684";
+}
+
+.dice-utf8 .dice-6::after {
+    content: "\2685";
+}
+
+.dice-utf8 {
+    font-size: 32px;
+}
+
+button {
+    font-size: 2em;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 5px;
+    text-align: left;
+}

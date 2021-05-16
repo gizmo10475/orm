@@ -1,0 +1,84 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} yatzy {% endblock %}
+
+{% block body %}
+
+<h1>Spela yatzy!</h1>
+
+{% if app.session.get('yatzythrows') <= 3 %}
+    <p> SAMLA ETTOR </p>
+{% elseif app.session.get('yatzythrows') > 3 and app.session.get('yatzythrows') <= 6 %}
+    <p> SAMLA TVÅOR </p>
+{% elseif app.session.get('yatzythrows') > 6 and app.session.get('yatzythrows') <= 9 %}
+    <p> SAMLA TREOR </p>
+{% elseif app.session.get('yatzythrows') > 9 and app.session.get('yatzythrows') <= 12 %}
+    <p> SAMLA FYROR </p>
+{% elseif app.session.get('yatzythrows') > 12 and app.session.get('yatzythrows') <= 15 %}
+    <p> SAMLA FEMMOR </p>
+{% elseif app.session.get('yatzythrows') > 15 and app.session.get('yatzythrows') <= 18 %}
+    <p> SAMLA SEXOR </p>
+{% endif %}
+
+<p class="dice-utf8">
+    {% for value in app.session.get('listan') %}
+        <button class=" {{ value }}"> </button>
+    {% endfor %}
+</p>
+<form method="POST">
+    <p>behåll tärningar</p>
+    <input type="checkbox" id="tärning1" value="tärning1" name="tärning1">
+    <input type="checkbox" id="tärning2" value="tärning2" name="tärning2">
+    <input type="checkbox" id="tärning3" value="tärning3" name="tärning3">
+    <input type="checkbox" id="tärning4" value="tärning4" name="tärning4">
+    <input type="checkbox" id="tärning5" value="tärning5" name="tärning5">
+
+    <input type="submit" value="Slå igen" name="submit">
+</form>
+
+<table>
+    <tr>
+        <th>Yatzy</th>
+        <th>Poäng</th>
+    </tr>
+    <tr>
+        <td>Ettor</td>
+        <td> {{ app.session.get('totalones') }}</td>
+    </tr>
+    <tr>
+        <td>Tvåor</td>
+        <td>{{ app.session.get('totaltwos') }}</td>
+    </tr>
+    <tr>
+        <td>Treor</td>
+        <td>{{ app.session.get('totalthrees') }}</td>
+    </tr>
+    <tr>
+        <td>Fyror</td>
+        <td>{{ app.session.get('totalfours') }}</td>
+    </tr>
+    <tr>
+        <td>Femmor</td>
+        <td>{{ app.session.get('totalfives') }}</td>
+    </tr>
+    <tr>
+        <td>Sexor</td>
+        <td>{{ app.session.get('totalsixes') }}</td>
+    </tr>
+    <tr>
+        <td><b>Summa</b></td>
+        <td>{{ app.session.get('totalpoints') }}</td>
+    </tr>
+    <tr>
+        <td>Bonus</td>
+        <td>{{ app.session.get('bonus') }}</td>
+    </tr>
+    <tr>
+        <td><b>Totalt</b></td>
+        <td>{{ app.session.get('totalSum') }}</td>
+    </tr>
+
+</table>
+
+
+{% endblock %}

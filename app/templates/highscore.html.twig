@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Books {% endblock %}
+
+{% block body %}
+
+<h1>Highscore Yatzy</h1>
+
+<table>
+    <tbody>
+            <tr>
+                <td>Id</td>
+                <td>Poäng</td>
+        {% for score in highscore %}
+            <tr>
+                <td> {{score.id}} </td>
+                <td> {{score.score}} </td>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+
+{% endblock %}

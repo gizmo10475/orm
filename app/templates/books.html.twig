@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Books {% endblock %}
+
+{% block body %}
+
+<h1>BOOKS</h1>
+
+<table>
+    <tbody>
+            <tr>
+                <td>Boknamn</td>
+                <td>ISBN</td>
+                <td>Författare</td>
+                <td>Bild</td>
+        {% for book in books %}
+            <tr>
+                <td> {{book.name}} </td>
+                <td> {{book.isbn}} </td>
+                <td> {{book.author}} </td>
+                <td> <a href="{{book.img}}">Tryck för bild</a></td>
+        {% endfor %}
+    </tbody>
+
+
+</table>
+
+
+
+{% endblock %}
