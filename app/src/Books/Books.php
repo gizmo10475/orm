@@ -1,6 +1,6 @@
 <?php
 
-namespace Mos\Books;
+namespace App\Books;
 use Doctrine\ORM\Mapping as ORM;
 
 
